@@ -13,6 +13,10 @@ body {
   cursor: pointer;
 }
 
+.img--select {
+  opacity: 0.8;
+}
+
 .container {
   display: flex;
   width: 600px;

@@ -25,6 +25,7 @@ let secondTarget;
 function getSwap(event) {
   if (firstOrder === undefined) {
     firstTarget = event.target;
+    firstTarget.classList.add("img--select");
     firstOrder = event.target.style.order;
   } else {
     secondTarget = event.target;
@@ -33,6 +34,7 @@ function getSwap(event) {
     firstTarget.style.order = secondOrder;
     secondTarget.style.order = firstOrder;
 
+    firstTarget.classList.remove("img--select");
     firstOrder = undefined;
     secondOrder = undefined;
     firstTarget = undefined;
