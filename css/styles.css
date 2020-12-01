@@ -1,0 +1,20 @@
+body {
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  margin: 0;
+}
+
+.img {
+  width: 25%;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+}
