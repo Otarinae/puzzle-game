@@ -67,7 +67,7 @@ function getSwap(event) {
 
     if (isEqual(imgArray, sortedOrders)) {
       setTimeout(() => {
-        alert("Вы кончили");
+        alert("Вы молодец");
       }, 1);
     }
   }
