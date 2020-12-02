@@ -22,6 +22,20 @@ let secondOrder;
 let firstTarget;
 let secondTarget;
 
+function isEqual(firstArray, secondArray) {
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
+
+  for (let i = 0; i < firstArray.length; i++) {
+    if (firstArray[i] !== secondArray[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function getSwap(event) {
   if (firstOrder === undefined) {
     firstTarget = event.target;
@@ -35,10 +49,27 @@ function getSwap(event) {
     secondTarget.style.order = firstOrder;
 
     firstTarget.classList.remove("img--select");
+
     firstOrder = undefined;
     secondOrder = undefined;
     firstTarget = undefined;
     secondTarget = undefined;
+
+    const sortedOrders = ordersList;
+
+    sortedOrders.sort((a, b) => a - b);
+
+    const imgArray = [];
+
+    for (let i = 0; i < piecesOfImage.length; i++) {
+      imgArray.push(Number(piecesOfImage[i].style.order));
+    }
+
+    if (isEqual(imgArray, sortedOrders)) {
+      setTimeout(() => {
+        alert("Вы кончили");
+      }, 1);
+    }
   }
 }
 
